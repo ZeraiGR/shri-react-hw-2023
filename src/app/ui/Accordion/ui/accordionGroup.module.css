@@ -3,6 +3,7 @@
 }
 
 .group p {
+    max-width: 95%;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -64,6 +65,10 @@
 @media (max-width: 768px) {
     .group {
         padding: 0;
+    }
+
+    .group p {
+        max-width: 100%;
     }
 
     .group.active button {
