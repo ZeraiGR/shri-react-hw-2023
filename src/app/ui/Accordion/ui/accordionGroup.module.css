@@ -1,0 +1,76 @@
+.group {
+    padding: 24px;
+}
+
+.group p {
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.group.active p {
+    max-height: 250px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.group.active button {
+    margin-bottom: 16px;
+}
+
+.group.active .icon {
+    transform: translate(100%, 100%) rotate(-180deg);
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px 50px;
+    flex-wrap: wrap;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    transition: margin-bottom 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    color: var(--orange);
+}
+
+.button:hover .icon {
+    fill: var(--orange);
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.icon {
+    fill: #333333;
+    transition: fill 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .group {
+        padding: 0;
+    }
+
+    .group.active button {
+        margin-bottom: 12px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+}
