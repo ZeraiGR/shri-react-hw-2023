@@ -1,0 +1,23 @@
+.wrapper {
+    padding: 24px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0;
+    }
+
+    .title {
+        margin-bottom: 12px;
+    }
+}
