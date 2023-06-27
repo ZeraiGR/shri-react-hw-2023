@@ -1,0 +1,11 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .accordion {
+        gap: 24px;
+    }
+}

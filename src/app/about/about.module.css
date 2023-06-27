@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        margin-bottom: 12px;
+    }
+}

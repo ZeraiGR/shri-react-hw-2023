@@ -1,0 +1,52 @@
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  transition: color 0.3s easy;
+}
+
+.button:hover {
+  color: var(--orange);
+}
+
+.icon {
+  fill: var(--text-tertiary);
+  pointer-events: none;
+}
+
+.list {
+  position: absolute;
+  padding: 8px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.1s, opacity 0.1s, visibility 0.1s;
+  background-color: var(--text-secondary);
+}
+
+.openwrapper .icon {
+  transform: rotate(180deg);
+}
+
+.open {
+  transform: translateY(45px);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@media (max-width: 972px) {
+  .list {
+    max-width: 252px;
+    position: fixed;
+    box-shadow: none;
+    transform: translate(-46px, 10px);
+  }
+}

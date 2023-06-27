@@ -1,0 +1,11 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  flex-grow: 1;
+}
+
+.cart > ul {
+  padding-top: 0;
+}

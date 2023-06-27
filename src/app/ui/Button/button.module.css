@@ -1,0 +1,24 @@
+.btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  outline-color: var(--orange);
+}
+
+.primary {
+  background-color: var(--orange);
+  color: var(--text-secondary);
+}
+
+.ghost {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.dropdown {
+  color: var(--text-tertiary);
+  font-weight: 400;
+  border-color: var(--border-light);
+}

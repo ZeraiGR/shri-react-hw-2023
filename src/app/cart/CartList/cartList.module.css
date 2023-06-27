@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.description {
+  margin-bottom: 24px;
+}
+
+.btns {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon {
+  pointer-events: none;
+}

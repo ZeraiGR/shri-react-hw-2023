@@ -1,0 +1,33 @@
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-secondary);
+    font-size: 20px;
+}
+
+.footer .content {
+    padding: 32px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content a {
+    transition: color 0.3s ease;
+}
+
+.content a:hover {
+    color: var(--orange);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        font-size: 16px;
+    }
+
+    .footer .content {
+        padding: 24px;
+    }
+}
