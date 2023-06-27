@@ -1,0 +1,25 @@
+.btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:disabled {
+  background-color: var(--orange-disabled);
+  cursor: initial;
+}
+
+.btn svg {
+  fill: var(--text-secondary);
+}
+
+.primary {
+  background-color: var(--orange);
+}
+
+.dark {
+  background-color: var(--bg-dark);
+}
