@@ -1,0 +1,22 @@
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-secondary);
+}
+
+.header .content {
+    padding: 24px 32px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header .content {
+        padding: 16px 24px;
+    }
+}

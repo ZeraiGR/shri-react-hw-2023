@@ -1,0 +1,14 @@
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart:hover .icon {
+    fill: var(--orange);
+}
+
+.icon {
+    transition: fill 0.3s ease;
+    fill: var(--text-secondary);
+}
