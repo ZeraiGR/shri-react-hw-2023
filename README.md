@@ -2,6 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+1. В качестве data-fetching используется rtk query
+2. В качестве хранилища - RTK 
+3. Местами могут не сходиться отступы, прошу понять и простить, тех.нюансы с окружением.
+4. Архитектура - её практически нет, т.к проект относительно небольшой.
+
 First, run the development server:
 
 ```bash
