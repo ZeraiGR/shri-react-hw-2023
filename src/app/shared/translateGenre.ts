@@ -1,13 +1,17 @@
-export function translateGenre (genre: string) {
+import { Genre } from '@/store/features/filterSlice';
+
+export function translateGenre (genre: Genre) {
     switch (genre) {
-        case "fantasy":
+        case Genre.FANTASY:
             return "Фэнтези";
-        case "horror":
+        case Genre.HORROR:
             return "Ужасы";
-        case "action":
+        case Genre.ACTION:
             return "Боевик";
-        case "comedy":
+        case Genre.COMEDY:
             return "Комедия";
+        case Genre.DEFAULT:
+            return "Не выбран";
         default:
             return genre;
     }
