@@ -1,0 +1,6 @@
+.input {
+  padding: 10px 16px;
+  border: 1px solid var(--border-light);
+  outline-color: var(--orange);
+  border-radius: 8px;
+}
