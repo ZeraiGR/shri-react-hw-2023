@@ -1,11 +1,9 @@
 .title {
     margin-bottom: 24px;
-    padding: 24px;
 }
 
 @media (max-width: 768px) {
     .title {
         margin-bottom: 28px;
-        padding: 0;
     }
 }

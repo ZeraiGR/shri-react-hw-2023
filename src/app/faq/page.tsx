@@ -9,7 +9,7 @@ export default function Faq () {
 
     return (
         <section>
-            <h1 className={classNames(styles.title, "title")}>Вопросы-ответы</h1>
+            <h1 className={classNames(styles.title, "title", "card")}>Вопросы-ответы</h1>
             <Accordion defaultGroup={defaultGroup}>
                 {data.map(({title, text, id}) =>
                     <AccordionGroup key={id} title={title} id={id}>
