@@ -1,14 +1,24 @@
 "use client";
-import React, {useCallback, useState} from "react";
+import React, {ReactNode, useCallback, useState} from "react";
 import styles from './accordion.module.css';
 
-export const AccordionContext = React.createContext();
+interface IAccordionContext {
+  activeGroup?: string | undefined
+  switchGroup?: (id: string) => void;
+}
 
-export default function Accordion ({ children, defaultGroup }) {
-    const [activeGroup, setActiveGroup] = useState(defaultGroup);
+export const AccordionContext = React.createContext<IAccordionContext>({});
 
-    const switchGroup = useCallback((id) => {
-        setActiveGroup(activeId => activeId === id ? undefined : id);
+interface AccordionProps {
+  children: ReactNode;
+  defaultGroup: string;
+}
+
+export default function Accordion ({ children, defaultGroup }: AccordionProps) {
+    const [activeGroup, setActiveGroup] = useState<string | undefined>(defaultGroup);
+
+    const switchGroup = useCallback((id: string) => {
+        setActiveGroup((activeId) => activeId === id ? undefined : id);
     }, []);
 
     return (

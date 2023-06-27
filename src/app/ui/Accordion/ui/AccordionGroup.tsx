@@ -1,20 +1,32 @@
 "use client";
 
-import React, {useContext} from "react";
+import React, {ReactNode, useContext} from "react";
 import { AccordionContext } from "../Accordion";
 import classNames from "classnames";
 import styles from "./accordionGroup.module.css";
 
-export const AccordionGroup = ({ children, title, id }) => {
+interface AccordionGroupProps {
+  children: ReactNode;
+  title: string;
+  id: string;
+}
+
+export const AccordionGroup = ({ children, title, id }: AccordionGroupProps) => {
     const { activeGroup, switchGroup } = useContext(AccordionContext),
         isActive = activeGroup === id;
 
+    const mods = classNames(
+      {[styles.active]: isActive}, 
+      styles.group,
+      "card",
+    );
+
     return (
-        <li className={classNames({[styles.active]: isActive}, styles.group)}>
-            <button className={styles.button} onClick={() => switchGroup(id)} type="button">
+        <li className={mods}>
+            <button className={styles.button} onClick={() => switchGroup?.(id)} type="button">
                 <span className={styles.title}>{title}</span>
                 <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                    <path className={styles.icon} fill-rule="evenodd" clip-rule="evenodd" d="M11.0001 29.3334H19.0001C26.2401 29.3334 29.3334
+                    <path className={styles.icon} fillRule="evenodd" clipRule="evenodd" d="M11.0001 29.3334H19.0001C26.2401 29.3334 29.3334
                     26.2401 29.3334 19.0001V11.0001C29.3334 3.76008 26.2401 0.666748 19.0001 0.666748H11.0001C3.76008
                     0.666748 0.666748 3.76008 0.666748 11.0001V19.0001C0.666748 26.2401 3.76008 29.3334 11.0001
                     29.3334ZM2.66675 11.0001C2.66675 4.85341 4.85341 2.66675 11.0001 2.66675H19.0001C25.1467 2.66675
