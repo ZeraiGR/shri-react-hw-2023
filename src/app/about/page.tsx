@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function About () {
     return (
-        <section className={styles.wrapper}>
+        <section className="card">
             <h1 className={classNames(styles.title, "title")}>О нас</h1>
             <div className={styles.content}>
                 <p>
