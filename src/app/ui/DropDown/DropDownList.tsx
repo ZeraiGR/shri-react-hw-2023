@@ -4,10 +4,10 @@ import { translateGenre } from '@/app/shared/translateGenre';
 import classNames from 'classnames';
 import { Genre } from '@/store/features/filterSlice';
 import { useAppDispatch } from '@/store/hooks';
-import { useCallback, useContext, useLayoutEffect } from 'react';
+import { useCallback } from 'react';
 import { setGenre } from '@/store/features/filterSlice';
 import { Cinema } from '@/app/types';
-import { AppContext } from '@/app/page';
+import useAppContext from '@/app/hooks/useAppContext';
 
 export interface Coords {
   x: number | undefined;
@@ -35,7 +35,7 @@ export default function DropDownList ({
   setCurrentName,
 }: DropDownListProps) {
   const dispatch = useAppDispatch();
-  const { setCinemaId } = useContext(AppContext);
+  const { setCinemaId } = useAppContext();
   const x = coords?.x,
         y = coords?.y;
 

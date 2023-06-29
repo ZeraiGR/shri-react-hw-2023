@@ -6,17 +6,8 @@ import { useGetMoviesByCinemaIdQuery } from '@/store/services/moviesApi';
 import ErrorWrapper from './ui/ErrorWrapper/ErrorWrapper';
 import { MOVIES_LOADING_ERROR, NO_MOVIES_ERROR, SPINNER_COLOR } from './constants';
 import { RotateLoader } from 'react-spinners';
-import { Dispatch, SetStateAction, createContext, useState } from 'react';
-
-interface AppContextInterface {
-  setCinemaId?: Dispatch<SetStateAction<string | undefined>>;
-  genrePlaceholder?: string | undefined;
-  cinemaPlaceholder?: string | undefined;
-  setGenrePlaceholder?: Dispatch<SetStateAction<string | undefined>>;
-  setCinemaPlaceholder?: Dispatch<SetStateAction<string | undefined>>;
-}
-
-export const AppContext = createContext<AppContextInterface>({});
+import {useState } from 'react';
+import AppContext from './AppContext';
 
 export default function Home() {
   const [cinemaId, setCinemaId] = useState<string>();

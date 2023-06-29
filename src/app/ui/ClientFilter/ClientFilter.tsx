@@ -1,4 +1,4 @@
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useState } from 'react';
 import DropDown from '../DropDown/DropDown';
 import classNames from 'classnames';
 import { translateGenre } from '@/app/shared/translateGenre';
@@ -6,7 +6,7 @@ import { Genre } from '@/store/features/filterSlice';
 import { Cinema } from '@/app/types';
 import useDropDown from '@/app/hooks/useDropDown';
 import styles from './clietnFilter.module.css';
-import { AppContext } from '@/app/page';
+import useAppContext from '@/app/hooks/useAppContext';
 
 interface ClientFilterProps {
   title: string;
@@ -18,7 +18,8 @@ interface ClientFilterProps {
 export default function ClientFilter (props: ClientFilterProps) {
   const { title, placeholder, className, variants } = props;
   const { isOpen, toggleOpen, closeDropDown } = useDropDown(styles.wrapper);
-  const { genrePlaceholder, setGenrePlaceholder} = useContext(AppContext);
+  
+  const { genrePlaceholder, setGenrePlaceholder} = useAppContext();
   const [curValue, setCurValue] = useState<string>(genrePlaceholder ||placeholder);
 
   const setCurrentName = useCallback((value: Genre | Cinema) => {

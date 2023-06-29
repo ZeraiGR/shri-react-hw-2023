@@ -3,13 +3,13 @@ import DropDown from '../DropDown/DropDown';
 import ErrorWrapper from '../ErrorWrapper/ErrorWrapper';
 import { CINEMAS_LOADING_ERROR, NO_CINEMAS_ERROR, SPINNER_COLOR } from '@/app/constants';
 import { useGetCinemasQuery } from '@/store/services/moviesApi';
-import { useCallback, useContext, useState } from 'react';
+import { useCallback, useState } from 'react';
 import useDropDown from '@/app/hooks/useDropDown';
 import classNames from 'classnames';
 import { Genre } from '@/store/features/filterSlice';
 import { Cinema } from '@/app/types';
-import { AppContext } from '@/app/page';
 import styles from './serverFilter.module.css';
+import useAppContext from '@/app/hooks/useAppContext';
 
 interface ServerFilterProps {
   title: string;
@@ -19,7 +19,7 @@ interface ServerFilterProps {
 
 export default function ServerFilter (props: ServerFilterProps) {
   const { title, placeholder, className } = props;
-  const { cinemaPlaceholder, setCinemaPlaceholder} = useContext(AppContext);
+  const { cinemaPlaceholder, setCinemaPlaceholder} = useAppContext();
 
   const { 
     data: cinemas,

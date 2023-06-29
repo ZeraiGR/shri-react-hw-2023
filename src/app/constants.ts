@@ -8,6 +8,7 @@ export const CINEMAS_LOADING_ERROR = "Произошла ошибка при п�
 export const NO_CINEMAS_ERROR = "На данный момент кинотеатров нет, но скоро они обязательно появятся, не переживайте!";
 export const FATAL_UNKNOWN_ERROR = "Произошла неизвестная ошибка! Пожалуйста, попробуйте позже!";
 export const NOT_FOUND_MOVIES_AFTER_FILTERING = "По данному фильру результатов не нашлось! Попробуйте другую комбинацию!";
+export const USE_APP_CONTEXT_ERROR = "Хук useAppContext должен использоваться внутри <AppContext.Provider>";
 
 export const SPINNER_COLOR = "#FF5500";
 export const HEADER_HEIGHT = 76;
