@@ -3,10 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 
 export type CartState = Record<string, number>;
 
-const initialState: CartState = {
-    "2aT976Fs_Bek0e2ZR_05V": 10,
-    "9t2dPgRBgWpmOXRXK5l4Q": 14,
-};
+const initialState: CartState = {};
 
 export const cartSlice = createSlice({
     name: 'cart',
