@@ -1,13 +1,9 @@
-import { DEFAULT_PADDING_HORIZONTAL, DEFAULT_PADDING_VERTICAL, HEADER_HEIGHT } from '@/app/constants';
 import styles from './dropdown.module.css';
 import { translateGenre } from '@/app/shared/translateGenre';
 import classNames from 'classnames';
 import { Genre } from '@/store/features/filterSlice';
-import { useAppDispatch } from '@/store/hooks';
-import { useCallback, useContext, useLayoutEffect } from 'react';
-import { setGenre } from '@/store/features/filterSlice';
 import { Cinema } from '@/app/types';
-import { AppContext } from '@/app/page';
+import useDropDownClick from './useDropDownClick';
 
 export interface Coords {
   x: number | undefined;
@@ -22,11 +18,6 @@ interface DropDownListProps {
   setCurrentName: (value: Genre | Cinema) => void;
 }
 
-function isCinema (value: Genre | Cinema): value is Cinema {
-  return typeof value === "object";
-}
-
-
 export default function DropDownList ({ 
   coords,
   variants,
@@ -34,37 +25,13 @@ export default function DropDownList ({
   close,
   setCurrentName,
 }: DropDownListProps) {
-  const dispatch = useAppDispatch();
-  const { setCinemaId } = useContext(AppContext);
-  const x = coords?.x,
-        y = coords?.y;
+  const data = useDropDownClick(coords, setCurrentName, close, isOpen, styles.open);
 
-  const setValueHandler = useCallback((value: Genre | Cinema) => {
-    if (isCinema(value)) {
-      !!setCinemaId && setCinemaId(value.id);
-    } else {
-      dispatch(setGenre(value));
-    }
-
-    close();
-    setCurrentName(value);
-
-    // fixing error when filter at the bottom of the page
-    window.scrollTo({top: 0});
-  }, [dispatch, close, setCurrentName, setCinemaId]);
-  
-  if (!x || !y) {
+  if (!data) {
     return null;
   }
 
-  let position = {
-    top: y + HEADER_HEIGHT + DEFAULT_PADDING_VERTICAL + window.scrollY, 
-    left: x + DEFAULT_PADDING_HORIZONTAL
-  };
-
-  const mods = [
-    {[styles.open]: isOpen},
-  ];
+  const { setValueHandler, position, mods } = data;
 
   return (
     <ul className={classNames(styles.list, ...mods)} style={position}>

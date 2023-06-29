@@ -23,7 +23,6 @@
 .content {
     display: flex;
     gap: 32px;
-    padding: 24px;
 }
 
 .info {

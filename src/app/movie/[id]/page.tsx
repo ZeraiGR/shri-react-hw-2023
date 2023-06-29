@@ -32,7 +32,7 @@ export default function Movie ({ params: { id } }: { params: {id: string} }) {
 
     return (
         <section className={styles.page}>
-            <div className={styles.content}>
+            <div className={classNames(styles.content, "card")}>
                 <Image
                     className={classNames(styles.poster, styles.desktop)}
                     src={movie.posterUrl}
